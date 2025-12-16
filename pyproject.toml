@@ -3,4 +3,7 @@ name = "lexicon"
 version = "0.1.0"
 description = "Add your description here"
 requires-python = ">=3.12"
-dependencies = []
+dependencies = [
+    "fastapi>=0.124.4",
+    "uvicorn>=0.38.0",
+]
