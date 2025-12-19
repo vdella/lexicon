@@ -4,10 +4,13 @@ from typing import Set, Dict, Tuple
 
 @dataclass
 class FiniteAutomata:
-    initial_state: "State" = field(init=False)
+    initial_state: "State"
     states: Set["State"] = field(default_factory=set)
     transitions: Dict[Tuple["State", "State"], "State"] = field(default_factory=dict)
     final_states: Set["State"] = field(default_factory=set)
+
+    def __post_init__(self):
+        self.states = {self.initial_state}
 
 
 @dataclass(frozen=True)
