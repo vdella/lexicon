@@ -1,11 +1,20 @@
-# Test your FastAPI endpoints
+### Health
+GET http://localhost:8000/health
 
-GET http://127.0.0.1:8000/
-Accept: application/json
+### Analyze
+POST http://localhost:8000/api/v1/regex/analyze
+Content-Type: application/json
 
-###
+{
+  "regex": "(a|b)*abb",
+  "active_page": 0
+}
 
-GET http://127.0.0.1:8000/hello/User
-Accept: application/json
+### Figure (page 3)
+POST http://localhost:8000/api/v1/regex/figure
+Content-Type: application/json
 
-###
+{
+  "regex": "(a|b)*abb",
+  "active_page": 3
+}
